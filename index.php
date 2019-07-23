@@ -220,7 +220,7 @@ function get_ip(){
 
 
 
-					<div class="g-recaptcha form-group form-group-full" data-sitekey="6LeK064UAAAAAKL1UsQckaHm3BBGHHqIo2bB9Gir"></div>
+					<div class="g-recaptcha form-group form-group-full" data-sitekey="aaaaaaaaaaaaaaaaaaaaaaaaaa"></div>
 
 					<ul class="actions" style="padding: 0;display: inline;">
 						
