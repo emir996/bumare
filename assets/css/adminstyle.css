@@ -1,0 +1,198 @@
+body {
+    background: #dee2e6;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color      Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+}
+/* login form style */
+.form-container {
+    border:0px solid #fff;
+    padding: 35px 50px;
+    margin-top: 20vh;
+    -webkit-box-shadow: -1px 4px 26px 11px rgba(0,0,0,0.75);
+    -moz-box-shadow: -1px 4px 26px 11px rgba(0,0,0,0.75);
+    box-shadow: -1px 4px 26px 11px rgba(0,0,0,0.75); 
+}
+.row h2{
+    color: #dc3545;
+    margin-bottom: 10px;
+}
+.row label{
+    color: #dc3545;
+}
+.btn-block{
+    margin-top: 7vh;
+    background-color: #dc3545;
+    color: #fff;
+}
+.btn-block:hover {
+    background-color: #FFFFFF;
+    border: 1px solid #dc3545;
+    color: #dc3545;
+}
+.val_error {
+    color: red;
+}
+/* nav */
+    .navbar {
+        padding: 8px 102px;
+        background: #007bff;
+        margin-bottom: 20px;
+    }
+    .navbar-toggler{
+        background: #007bff;
+    }
+    .navbar-toggler-icon img{
+        width: 30px;
+        height: 30px;
+    }
+    
+    .jumbotron {
+        padding: 0px;
+        margin: 32px 102px;
+    }
+    thead {
+        background: #007bff;
+    }
+    .btn-logout{
+        background: #dc3545;
+        color: #fff;
+        border: 1px solid #dc3545;
+        padding: 6px 11px;
+        border-radius: 5px;
+        margin-left: 7px;
+    }
+    .btn-logout:hover{
+        background: #fff;
+        color: #dc3545;
+        cursor: pointer;
+    }
+
+    .add {
+        padding: 6px 11px;
+        background-color: #00c851;
+        color: #fff;
+        border-radius: 5px;
+    }
+    .add:hover {
+        background-color: #fff;
+        border: 1px solid #00c851;
+        color: #00c851;
+    }
+    
+    .del {
+        background-color: #dc3545;
+        border: 1px solid #dc3545;
+        border-radius: 5px;
+        font-size: 20px;
+        cursor: pointer;
+        padding: 5px 10px;
+        color: #fff;
+    }
+    .del:hover {
+        background: #fff;
+        color: #dc3545;
+    }
+     .edit {
+        background-color: #00c851;
+        border: 1px solid #00c851;
+        border-radius: 5px;
+        font-size: 20px;
+        cursor: pointer;
+        padding: 5px 10px;
+        color: #fff;
+    }
+    .edit:hover {
+        background: #fff;
+
+        color: #00c851;
+    }
+
+
+@media only screen and (max-width: 600px){
+        .jumbotron {
+            padding: 0px;
+            margin: 18px 22px 0px 18px;
+        }
+        .table-heading {
+            position: relative;
+            top: 10px;
+        }
+        .container1 {
+            margin-top: 4vh;
+            padding: 10px 20px;
+        }
+    }
+    @media only screen and (max-width: 920px){
+        .jumbotron {
+            padding: 0px;
+            margin: 18px 22px;
+        }
+        .table-heading {
+            position: relative;
+            top: 10px;
+        }
+    .table th td {
+        width: 50px;
+        }
+    }
+
+    
+/* languages */
+
+.container1 {
+    background: linear-gradient(to right, #0062E6, #33AEFF);
+    border: 1px solid #dee2e6;
+    border-radius: 10px;
+    margin: 9vh auto;
+    padding: 15px 25px;
+
+}
+.col {
+    margin:10px 25px;
+}
+.col input[type=text]{
+    width: 90%;
+    padding: 3px 15px;
+    margin-bottom: 25px;
+}
+
+/* jobs */
+
+ .jobs-heading {
+    margin-bottom: 15px;
+}
+
+.job-body {
+    margin-bottom: 15px;
+}
+
+.job_btn {
+    padding: 3px 9px;
+    margin: 3px;
+    border: none;
+    border-radius: 3px;
+    cursor:pointer;
+}
+
+
+/* modal style */
+
+.modal_body input[type=text] {
+    margin: 0 auto;
+    width: 90%;
+}
+.modal_body textarea[type=text]{
+    margin: 0 auto;
+    width: 90%;
+}
+.modal_body select {
+    margin: 30px auto;
+    width: 90%;
+}
