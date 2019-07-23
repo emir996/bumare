@@ -41,7 +41,7 @@ class Email
 			die();
 		} else {
 
-			$secretKey = "6LeK064UAAAAAC28ipxGfuiyA-EGCf2kZ9pDTXVZ";
+			$secretKey = "aaaaaaaaaaaaaaaaaaaaaaa";
 		    $responseKey = $_POST['g-recaptcha-response'];
 		    $userIP = $_SERVER['REMOTE_ADDR'];
 		    $url = "https://www.google.com/recaptcha/api/siteverify?secret=$secretKey&response=$responseKey&remoteip=$userIP";
@@ -104,7 +104,7 @@ class Email
 			var_dump(http_response_code(404));
 		} else {
 
-				$secretKey = "6LeK064UAAAAAC28ipxGfuiyA-EGCf2kZ9pDTXVZ";
+				$secretKey = "aaaaaaaaaaaaaaaaaaaaaa";
 			    $responseKey = $_POST['g-recaptcha-response'];
 			    $userIP = $_SERVER['REMOTE_ADDR'];
 			    $url = "https://www.google.com/recaptcha/api/siteverify?secret=$secretKey&response=$responseKey&remoteip=$userIP";
