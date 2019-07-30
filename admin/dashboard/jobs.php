@@ -13,7 +13,7 @@
 		    <div class="col-md-6 col-xs-6">
 		    	<div class="row job-header">
 		    		<div class="col-md-9">
-				    	<h3 class="jobs-heading">Check or Set jobs</h3>
+				    	<h3 class="jobs-heading">Create or Edit jobs</h3>
 				    </div>
 				    <div class="col-md-3">
 				    	<input type="button" id="add_new" class="btn btn-success" value="Insert Job"/>
