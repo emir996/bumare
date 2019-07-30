@@ -2720,7 +2720,7 @@
 	}
 	#one .row-inner .section-one-row .title h3{
 		font-size: 18px;
-		height: 60px;
+		min-height: 60px;
 	}
 	#one .row-inner .section-one-row .icon{
 		margin-bottom: 20px;
