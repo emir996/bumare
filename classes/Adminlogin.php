@@ -32,18 +32,18 @@ class Adminlogin {
 			$query = "SELECT * FROM administrator WHERE username='$username' AND password='$password' LIMIT 1";
 			$result = $this->db->select($query);
 
-			if($result != false){
+			if($result == true){
 
-			$value = $result->fetch_assoc();
-			Session::set("adminlogin", true);
-			Session::set("id", $value['id']);
-			Session::set("username", $value['username']);
-			header('location: dashboard/');
+				$value = $result->fetch_assoc();
+				Session::set("adminlogin", true);
+				Session::set("id", $value['id']);
+				Session::set("username", $value['username']);
+				header('location: dashboard/');
 
-		}else{
+			}else{
 
-			$loginmsg = "Check your username or password.";
-			return $loginmsg;
+				$loginmsg = "Check your username or password.";
+				return $loginmsg;
 			}
 		} 
 		

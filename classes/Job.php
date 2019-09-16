@@ -17,7 +17,7 @@ class Job {
 		return $result;
 	}
 
-	public function getAllRecords($start, $limit){
+	public function getLimitedRecords($start, $limit){
 		$query = "SELECT * FROM jobs LIMIT $start, $limit";
 		$result = $this->db->select($query);
 		return $result;
@@ -53,7 +53,7 @@ class Job {
 		$chkquery = "SELECT id FROM jobs WHERE profession='$profession' AND interest='$interest'";
 		$result = $this->db->select($chkquery);
 		
-		if($result != false){
+		if($result){
 			$msg = 'This Job Already Exist!';
 			exit($msg);
 		} else {
@@ -95,7 +95,7 @@ class Job {
 
 		$del_id = $_GET['deljob'];
 		$query = "DELETE FROM jobs WHERE id='$del_id'";
-		$del_result = $this->db->deleteMessage($query);
+		$del_result = $this->db->delete($query);
 	}
 
 }

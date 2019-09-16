@@ -2,7 +2,6 @@
 
 	class Database {
 
-
 		public $conn;
 		public $error;
 
