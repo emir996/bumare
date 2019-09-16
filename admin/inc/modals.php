@@ -123,8 +123,8 @@
             </div>
 
             <div class="modal-footer">
-               <button type="button" class="btn btn-secondary" id="close_modal" data-dismiss="modal">Close</button>
-               <input type="button" id="manageBtn" onclick="manageData('add_new')" value="Insert" class="btn btn-success">
+              <button type="button" class="btn btn-secondary" id="close_modal" data-dismiss="modal">Close</button>
+              <input type="button" id="manageBtn" onclick="manageData('add_new')" value="Insert" class="btn btn-success">
             </div>
          </div>
       </div>

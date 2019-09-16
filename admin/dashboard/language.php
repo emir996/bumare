@@ -42,7 +42,7 @@
 		<div class="container container1">
 		  <div class="row text-center">
 		    <div class="col">
-		    	<h3>Settings</h3>
+		    	<h3 class="language-heading">Settings</h3>
 		     <form action="" method="POST">
 		      <select class="browser-default custom-select custom-select-lg mb-3" name="lang" id="lang" onchange="if(this.value <= 0) return; window.location='?lid='+this.value">
 		      	<option value="-1">Choose your language</option>
@@ -64,7 +64,7 @@
 		     </form>
 		    </div>
 		    <div class="col">
-		    	<h3>List of Languages:</h3>
+		    	<h3 class="language-heading">List of Languages:</h3>
 		    	
 		      <ul class="list-group">
 		      	<?php

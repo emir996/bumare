@@ -20,7 +20,7 @@
 
     $(document).ready(function(){
 
-        $("#add_new").on('click', function(){
+        $("#add_job").on('click', function(){
             $("#jobManager").modal('show');
         });
 
@@ -31,6 +31,11 @@
             $("#job_interest").val('');
             $("#job_description").val('');
             //$(".modal-title").text('Add Job');
+        });
+
+        $("#add_profile").on('click', function(){
+            $("#profileModal").modal('show');
+            $(".modal-title").text('Create Profile');
         });
 
         getTableData();
@@ -64,6 +69,25 @@
         }
     }
 
+    function changeView($this){
+		var selectedText = $('option:selected', $this).text().toLowerCase();
+		//var val = $($this).val();
+
+		console.log(selectedText);
+		//console.log(val);
+		//console.log(txt);
+
+		if(selectedText != 'all'){
+			$('tbody tr').hide();
+			$("tr[data-language="+selectedText+"]").each(function(){
+				$(this).show();
+			})
+		} else {
+			$('tbody tr').show();
+		}
+		
+	}
+
     function check(){
 
         var question = confirm("Are you sure, you will delete this forever?");
@@ -95,7 +119,7 @@
 
         function getExistingData(start, limit){
         $.ajax({
-            url:'../ajaxcall/ajax.php',
+            url:'../ajaxcall/fetch.php',
             method: 'POST',
             dataType: 'text',
             data: {
@@ -127,10 +151,6 @@
             });
         }
 
-       
-
-    
-
     function isNotEmpty(caller) {
         if(caller.val() == ''){
             caller.css('border', '1px solid red');
@@ -142,31 +162,7 @@
         }
     }
 
-
-    function edit(rowId){
-         $.ajax({
-               url:'../ajaxcall/ajax.php',
-               method: 'POST',
-               dataType: 'json',
-               data: {
-                  key:'getRowData',
-                  rowId: rowId
-               }, success: function (response) {
-                  $("#editRowId").val(rowId);
-                  $("#job_profession").val(response.profession);
-                  $("#job_interest").val(response.interest);
-                  $("#job_description").val(response.description);
-                  $("#jobManager").modal('show');
-
-                  
-
-                  $(".modal-title").text('Edit Job');                  
-                  $("#manageBtn").attr('value', 'Save Changes').attr('onclick', "manageData('updateRow')");
-               }
-            });
-      }
-
-      function manageData(key){
+    function manageData(key){
          var profession = $("#job_profession");
          var interest = $("#job_interest");
          var description = $("#job_description");
@@ -184,12 +180,9 @@
                   description: description.val(),
                   rowId: editRowId.val()
                }, success: function (response) {
-                  if(response != "Job Updated Successfully"){
-                     alert(response);
-                     $("#jobManager").modal('hide');
-                     window.location.reload();
-                  } else {
-                     $("#profession_"+editRowId.val()).html(profession.val());
+                  if(response == "Job Updated Successfully"){
+
+                    $("#profession_"+editRowId.val()).html(profession.val());
                      $("#interest_"+editRowId.val()).html(interest.val());
 
                      profession.val();
@@ -198,6 +191,11 @@
 
                      $("#jobManager").modal('hide');  
                      $("#manageBtn").attr('value', 'Save').attr('onclick', "manageData('updateRow')");
+                     
+                  } else {
+                      alert(response);
+                      $("#jobManager").modal('hide');
+                      window.location.reload();                      
 
                         }
                     }
@@ -205,10 +203,34 @@
             }
         }
 
-      function getValue(id){
-      var value = $("#public_"+id).prop("checked");
+    function edit(rowId){
+        $.ajax({
+               url:'../ajaxcall/ajax.php',
+               method: 'POST',
+               dataType: 'json',
+               data: {
+                  key:'getRowData',
+                  rowId: rowId
+               }, success: function (response) {
+                  $("#editRowId").val(rowId);
+                  $("#job_profession").val(response.profession);
+                  $("#job_interest").val(response.interest);
+                  $("#job_description").val(response.description);
+                  $("#jobManager").modal('show');
+                  
 
-      $.post('jobs.php', {public:{
+                  $(".modal-title").text('Edit Job');                  
+                  $("#manageBtn").attr('value', 'Save Changes').attr('onclick', "manageData('updateRow')");
+               }
+            });
+        }
+
+
+      function getValue(id){
+      
+        var value = $("#public_"+id).prop("checked");
+        
+        $.post('public_cv.php', {public:{
         id: id,
         value: value
       }}, function(data){

@@ -9,19 +9,24 @@ Session::checkSession();
     $app = new Application();
     $job = new Job();
     $text = new Language();
+    $profile = new Profile();
 
     if(isset($_GET['delapp'])){
-        $del_app = $app->delApplication();
+        $app->delApplication();
     }
 
     if(isset($_GET['deljob'])){
-        $del_job = $job->deleteRecord();
+        $job->deleteRecord();
     }
 
     if(isset($_GET['dellang'])){
-      $delete = $text->langDelete();
+        $text->langDelete();
+    }
+
+    if(isset($_GET['delprofile'])){
+        $profile->delProfile();
     }
 
     if(isset($_POST["public"])){
-        $is_public = $app->changeStatus();
+        $profile->changeStatus();
     }

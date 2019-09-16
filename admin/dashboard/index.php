@@ -14,9 +14,16 @@
 				<thead>
 					<input type="text" name="search_input" id="search_input" onkeyup="search_text()" placeholder="Search" class="form-control" />
 					<tr class="text-center text-white">
-						<th>ID</th>
+						<th>Num</th>
 						<th>Key</th>
-						<th>Language</th>
+						<th>
+							<select id="sel_lang" onchange="changeView(this)">
+								<option value="1">All</option>
+								<option>English</option>
+								<option>German</option>
+								<option>Bosnian</option>
+							</select>
+						</th>
 						<th>Text</th>
 						<th>Edit</th>
 						<th>Delete</th>
