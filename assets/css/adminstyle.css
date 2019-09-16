@@ -163,10 +163,20 @@ body {
     margin-bottom: 25px;
 }
 
+.language-heading {
+    margin-bottom: 15px;
+    color: #fff;
+}
+
 /* jobs */
 
  .jobs-heading {
     margin-bottom: 15px;
+    color: #fff;
+}
+
+.job-header {
+    width: 95%;
 }
 
 .job-body {
@@ -181,6 +191,57 @@ body {
     cursor:pointer;
 }
 
+.list-info {
+    margin-bottom: 3px;
+    border-radius: 5px;
+}
+
+.personal-info {
+    border: 2px solid #dc3545;
+    border-radius: 5px;
+}
+.personal-info h5 {
+    text-align: center;
+}
+.personal-info p {
+    text-align: left;
+    margin-bottom: 8px;
+    overflow: hidden;
+}
+
+#btn_copy {
+    margin-bottom: 8px;
+}
+
+.job-info {
+    border: 2px solid #dc3545;
+    border-radius: 5px;
+    max-height: 125px;
+}
+
+.job-info h5 {
+    text-align:center;
+}
+
+.job-info p {
+    text-align: left;
+    margin-bottom: 8px;
+}
+
+.time {
+    text-align: center;
+    margin-top: 30px;
+    border-bottom: 1px solid #dc3545;
+}
+.del_btn {
+    text-align:center;
+}
+
+@media only screen and (max-width: 768px){
+    .personal-info {
+        margin-bottom: 10px;
+    }
+}
 
 /* modal style */
 
@@ -195,4 +256,46 @@ body {
 .modal_body select {
     margin: 30px auto;
     width: 90%;
+}
+
+/* public cv page style */
+@media only screen and (min-width: 992px)
+{
+    .operations {
+        position: relative;
+        top: 8%; 
+    }
+}
+
+@media screen and (min-width:768px) and (max-width:991px)
+{
+    .operations {
+        position: relative;
+        top: 20%;
+        right: 13px;
+    }
+}
+
+.p-btn-del, .p-btn-edit {
+    padding: 3px 9px;
+    margin: 3px;
+    border: none;
+    border-radius: 3px;
+    cursor:pointer;
+}
+
+.card-section .card-body {
+    border: 1px solid #33AEFF;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.card-section .card-header {
+    background: #33AEFF;
+    color: #fff;
+}
+.card-section .card-body, .card-header 
+{
+    color: #0066ff;
+    text-align:left;
 }
