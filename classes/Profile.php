@@ -17,7 +17,7 @@ class Profile {
     }
 
     public function getAllPublicRecords($is_public){
-        $query = "SELECT * FROM profiles WHERE is_public = '$is_public'";
+        $query = "SELECT * FROM profiles WHERE is_public = '$is_public' ORDER BY id DESC";
         $result = $this->db->Select($query);
         return $result;
     }
