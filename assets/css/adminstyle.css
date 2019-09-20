@@ -175,6 +175,16 @@ body {
     color: #fff;
 }
 
+.job-header-1 {
+    display: flex;
+}
+.job-cr-btn {
+    flex:1;
+    display:flex;
+    justify-content:flex-end;
+    padding: 3px 4px;
+}
+
 .job-header {
     width: 95%;
 }
@@ -237,6 +247,21 @@ body {
     text-align:center;
 }
 
+@media only screen and (max-width: 992px)
+{
+    .job-header-1 {
+        display: block;
+    }
+
+    .job-cr-btn {
+        display:block;
+        padding: 2px 3px;
+    }
+    .job-h .jobs-heading {
+        margin-bottom: 5px;
+    }
+}
+
 @media only screen and (max-width: 768px){
     .personal-info {
         margin-bottom: 10px;
@@ -275,6 +300,17 @@ body {
         right: 13px;
     }
 }
+@media screen and (min-width:500px) and (max-width: 767px)
+{
+    .cv-header-2 {
+        display: block !important;
+    }
+
+    #pag-center {
+        display: block !important;
+        margin-top: 12px;
+    }
+}
 
 .p-btn-del, .p-btn-edit {
     padding: 3px 9px;
@@ -299,3 +335,13 @@ body {
     color: #0066ff;
     text-align:left;
 }
+
+.cv-header-2 {
+    display: flex;
+}
+#pag-center {
+    flex:1;
+    display:flex;
+    justify-content:flex-end;
+}
+

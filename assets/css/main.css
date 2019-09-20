@@ -2726,7 +2726,7 @@
 		margin-bottom: 20px;
 	}
 
-	/* */
+	/* profiles for employers */
 	
 	#two {
 		background-color: #fff;
@@ -2802,7 +2802,71 @@
 		overflow-y: scroll;
 	}
 
-	/* */
+	#two .card-body .profile-job
+	{
+		border-bottom: 2px solid #299be8;
+		margin-bottom: 12px;
+	}
+
+	#two .card-body .profile-job-title 
+	{
+		margin: 10px 0px 20px;
+	}
+
+	#two .card-body .profile-job-skill 
+	{
+		margin-bottom: 10px;
+		font-weight: 700;
+	}
+
+	#two .card-body .profile-job-cv
+	{
+		margin-bottom: 10px;
+		margin-top: 25px;
+	}
+
+	#two ul {
+		margin-bottom: 0px;
+		margin-top: 7px;
+		padding: 0px;
+	}
+
+	#two .indicators li {
+		text-decoration: none;
+		list-style: none;
+		display: inline-block;
+		margin-right: 5px;
+		
+	}
+
+	#two .indicators .dot
+	{
+		height: 15px;
+		width: 15px;
+		background-color: #ddd;
+		border-radius: 50%;
+		display: inline-block;
+		
+	}
+
+	#two .indicators li:hover
+	{
+		background-color: #fff;
+		border: 2px solid #299be8;
+	}
+
+	.activec
+	{
+		background-color: #299be8 !important;
+	}
+
+	@media only screen and (max-width: 736px){
+		#two .card-body .panel-desc {
+			border-bottom: 2px solid #fff;
+		}
+	}
+
+	/* end profiles */
 
 	#info{
 		background-color: #fff;
@@ -2843,6 +2907,9 @@
 		margin-top: 20px;
 	}
 
+		.exit {
+			text-align: center;
+		}
 			/*app-job */
 		.container {
 			margin: 100px auto;
