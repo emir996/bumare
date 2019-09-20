@@ -98,7 +98,7 @@
 			exit($response);
 		} else {
 			$response = '<div class="box-body">
-			    			<h4>Sorry, We dont have any job offer for you at this moment.</h4>
+			    			<h4 class="empty_message"></h4>
 			    		</div>';
 			exit($response);
 			exit('reached_max');
@@ -116,19 +116,18 @@
 					<li class="list-group-item list-info">
 
 						<div class="row justify-content-around application-info">
-							<div class="col-md-5 personal-info">
+							<div class="col-md-6 personal-info">
 							
 								<h5>Personal info</h5>
 								<p>name: '.$rw["name"].'</p>
 								<p>mail: '.$rw["email"].'</p>
-								<button id="btn_copy" type="button" data-toggle="tooltip" data-placement="top" title="Copy E-mail" onclick="copy(\''.$rw["email"].'\')"><i class="fa fa-cut"></i></button>
 								<div class="tooltip">
 									
 								</div>
 								<p>Check CV: <a target="_blank" href="download.php?file_id='.$rw["id"].'">download</i></a></p>
 							
 							</div>
-							<div class="col-md-5 job-info">
+							<div class="col-md-4 job-info">
 							
 								<h5>Job</h5>
 								<p>'.$rw["profession"].'</p><p>'.$rw["interest"].'</p>
@@ -163,7 +162,7 @@
 								<div class="card-body">
 
 								<p class="card-text">Name: <span data-target="pName">'.$rw["name"].'</span></p>
-									<p class="card-text">e-mail: <span data-target="pEmail">'.$rw["email"].'</span></p>
+								<p class="card-text">e-mail: <span data-target="pEmail">'.$rw["email"].'</span></p>
 									
 								</div>
 							</div>
@@ -218,22 +217,22 @@
 			while($rw = $getPublicProfileData->fetch_assoc()){
 				$response .= '
 					<div class="section-one-row card">
-						<div class="header-img" style="background: #299be8;">
+						<div class="header-img">
 							<img class="card-img-top" src="https://img.icons8.com/officel/80/000000/change-user-male.png">
 						</div>
 						<div class="card-body">
-							<h1>'.$rw["name"].'</h1>
-							<p class="title">asdasdasd</p>
-							<p>'.$rw["email"].'</p>
-							<div style="margin: 12px 0;">
-								<a href="#"><i class="fa fa-dribbble"></i></a> 
-								<a href="#"><i class="fa fa-twitter"></i></a>  
-								<a href="#"><i class="fa fa-linkedin"></i></a>  
-								<a href="#"><i class="fa fa-facebook"></i></a> 
+							<div class="profile-job">
+								<h4 class="profile-job-title">Job Skill</h4>
+								<p class="profile-job-skill">'.ucfirst($rw["profession"]).'</p>
+								<p class="profile-job-skill">'.ucfirst($rw["interest"]).'</p>
+								<p class="profile-job-cv">Check CV Profile</p>
+								<p style="margin-top: 0px;" class="profile-job-cv">Click below for download</p>
+								<a class="" alt="CV_PROFILE_JOB" href="admin/dashboard/download.php?profile_id='.$rw["id"].'"><img style="width:40px; height:40px;" src="images/download-file.png"></a>
 							</div>
+								<img alt="LOGO OF BUMARE" src="./images/logo-icon.png" style="width:40px; height:40px;" />
 							<div class="desc">
 								<button class="btn-desc" onclick="toggleSlide('.$rw["id"].')" id="btn_desc_'.$rw["id"].'">Click for description</button>
-								<div class="panel-desc" id="panel_desc_'.$rw["id"].'">'.$rw["description"].'</div>
+								<div class="panel-desc" id="panel_desc_'.$rw["id"].'">'.ucfirst($rw["description"]).'</div>
 							</div>
 						</div>
 					</div>
@@ -241,7 +240,7 @@
 			}
 			exit($response);
 		} else {
-			$response = "<h5 class='text-center'>We dont have any profile at this moment.</h5>";
+			$response = "<h5 style='width:100%;' class='profile_message'></h5>";
 			exit($response);
 			exit('reached_max');
 		}

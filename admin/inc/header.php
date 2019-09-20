@@ -38,11 +38,74 @@
             $(".modal-title").text('Create Profile');
         });
 
+        $("#profileForm").on('submit', function(e){
+            e.preventDefault();
+
+            $.ajax({
+                url: '../ajaxcall/ajax.php',
+                method: 'POST',
+                data: new FormData(this),
+                contentType: false,
+                processData: false,
+                success: function(response){
+                    alert(response);
+                    $("#profileModal").modal('hide');
+                    window.location.reload();
+                }
+            });
+        });
+
+        $(document).on('click','button[data-role=update]', function(){
+
+            var p_id = $(this).data('id');
+            var p_name = $('#'+p_id).find('span[data-target=pName]').text();
+            var p_email = $('#'+p_id).find('span[data-target=pEmail]').text();
+            var p_profession = $('#'+p_id).find('span[data-target=pProfession]').text();
+            var p_interest = $('#'+p_id).find('span[data-target=pInterest]').text();
+            var p_file = $('#'+p_id).find('span[data-target=pFile]').text();
+            var p_description = $('#'+p_id).find('p[data-target=pDescription]').text();
+
+            $("#p_name").val(p_name);
+            $("#p_email").val(p_email);
+            $("#p_profession").val(p_profession);
+            $("#p_interest").val(p_interest);
+            $("#name_file").text(p_file);
+            $("#name_file").css('display', '');
+            $("#p_file").text(p_file);
+            $("#p_description").val(p_description);
+            $("#p_id").val(p_id);
+
+            $(".custom-checkbox").css('display', 'none');
+            $("#p_file").removeAttr('required');
+            $(".modal-title").text('Update Profile');
+            $("#profileBtn").attr('value', "Update");
+            $("#profileModal").modal('show');
+   
+        });
+
+        $("#profileModal").on('hidden.bs.modal', function(){
+            
+            $("#p_id").val(null);
+            $("#p_name").val('');
+            $("#p_email").val('');
+            $("#p_profession").val('');
+            $("#p_interest").val('');
+            $("#p_file").val('');
+            $("#p_description").val('');
+
+            $("#profileBtn").attr('value', "Create");
+            $(".custom-checkbox").css('display', '');
+            $("#name_file").css('display', 'none');
+
+        });
+
         getTableData();
 
         getExistingData(0, 20);
 
         getApplicationsData();
+
+        getProfileData();
 
         $('.heading-message').slideUp(1500);
 
@@ -150,6 +213,99 @@
                 }
             });
         }
+
+        function getProfileData(){
+            $.ajax({
+                url: '../ajaxcall/fetch.php',
+                method: 'POST',
+                dataType: 'text',
+                data: {
+                    key:'getProfileData'
+                }, success: function(response){
+                    if(response != "reached_max"){
+                        $("#list-profile").append(response);
+                        }
+                    },
+                    complete: function(){
+                        var numProfile = $("#list-profile .list-info").length;
+                        var limitPerPage = 2;
+                        $("#list-profile .list-info:gt("+(limitPerPage - 1)+")").hide();
+                        var totalPages = Math.ceil(numProfile / limitPerPage);
+
+                        if(numProfile > limitPerPage){
+
+                            //creating pagination list
+                            //for previous
+                            $(".pagination").append("<li id='previous-page' class='page-item'><a class='page-link'>Previous</a></li>");
+                                // just for 1
+                            $(".pagination").append("<li class='page-item current-page active'><a class='page-link' href='javascript:void(0)'>"+1+"</a></li>");
+                                // for rest number 
+                                for(var i = 2; i <= totalPages; i++){
+                                    $(".pagination").append("<li class='page-item current-page'><a class='page-link' href='javascript:void(0)'>"+i+"</a></li>");
+                                }
+                                //for next button
+                            $(".pagination").append("<li class='page-item' id='next-page'><a class='page-link' href='javascript:void(0)'>Next</a></li>");
+                            // end of pagination
+
+                            $(".pagination li.current-page").on("click", function(){
+
+                                    if($(this).hasClass("active")){
+                                        return false;
+                                    } else {
+                                        var currentPage = $(this).index();
+                                        $(".pagination li").removeClass("active");
+                                        $(this).addClass("active");
+                                        $("#list-profile .list-info").hide();
+
+                                        /*   p1    p2   p3
+                                            0 1 | 2 3 | 4 
+                                        */
+
+                                        var grandTotal = limitPerPage * currentPage;
+
+                                        for(var i = grandTotal - limitPerPage; i<grandTotal; i++){
+                                            $("#list-profile .list-info:eq("+i+")").show();
+                                        }
+                                    }
+                            });
+                            $("#next-page").on('click', function(){
+                                var currentPage = $(".pagination li.active").index();
+                                if(currentPage === totalPages){
+                                    return false;
+                                } else {
+                                    currentPage++;
+                                    $(".pagination li").removeClass("active");
+                                    $("#list-profile .list-info").hide();
+
+                                    var grandTotal = limitPerPage * currentPage;
+
+                                        for(var i = grandTotal - limitPerPage; i<grandTotal; i++){
+                                            $("#list-profile .list-info:eq("+i+")").show();
+                                        }
+                                        $(".pagination li.current-page:eq(" + (currentPage - 1) + ")").addClass("active");
+                                    }
+                                });
+                            $("#previous-page").on('click', function(){
+                                var currentPage = $(".pagination li.active").index();
+                                if(currentPage === 1){
+                                    return false;
+                                } else {
+                                    currentPage--;
+                                    $(".pagination li").removeClass("active");
+                                    $("#list-profile .list-info").hide();
+
+                                    var grandTotal = limitPerPage * currentPage;
+
+                                        for(var i = grandTotal - limitPerPage; i<grandTotal; i++){
+                                            $("#list-profile .list-info:eq("+i+")").show();
+                                        }
+                                        $(".pagination li.current-page:eq(" + (currentPage - 1) + ")").addClass("active");
+                                    }
+                            });
+                        }
+                    }
+                });
+            }
 
     function isNotEmpty(caller) {
         if(caller.val() == ''){

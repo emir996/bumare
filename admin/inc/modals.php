@@ -38,6 +38,64 @@
 </div>
 <!-- End of Modal -->
 
+<!-- PROFILE MODAL -->
+<div id="profileModal" class="modal fade">
+      <div class="modal-dialog">
+         <div class="modal-content">
+            <form method="POST" id="profileForm" enctype="multipart/form-data">
+            <div class="modal-header">
+               <h4 class="modal-title">Create Profile</h4>
+            </div>
+
+            <div class="modal-body">
+               <div class="modal-body1">
+                  <div class="form-group">
+                    <label>Enter Name: </label>
+                    <input type="text" name="p_name" id="p_name" class="form-control" required/>
+                  </div>
+
+                  <div class="form-group">
+                    <label>Enter E-mail: </label>
+                    <input type="email" name="p_email" id="p_email" class="form-control" required/>
+                  </div>
+
+                  <div class="form-group">
+                    <label>Enter Description: </label>
+                    <textarea style="min-height:200px;" type="text" name="p_description" id="p_description" class="form-control" required></textarea>
+                  </div>
+                  
+                  <div id="custom-inputs" class="form-group">
+                      <label>Job Skills:</label><br>
+                      <input type="text" id="p_profession" name="p_profession" placeholder="Enter profession" style="width: 48%;"/>
+                    
+                      <input type="text" id="p_interest" name="p_interest" placeholder="Enter interest" style="width: 48%;" />
+                  </div>
+
+                  <div class="form-group">
+                    <label>Enter CV: </label><br>
+                    <span id="name_file"></span>
+                    <input type="file" name="p_file" id="p_file"/>
+                  </div>
+
+                  <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" name="p_checkbox" id="p_checkbox" />
+                    <label class="custom-control-label" for="p_checkbox">Set Public</label>
+                  </div>
+
+                    <input type="hidden" name="p_id" id="p_id" value="0"/>
+               </div>
+            </div>
+
+            <div class="modal-footer">
+               <button type="button" class="btn btn-secondary" id="close_modal" data-dismiss="modal">Close</button>
+               <input type="submit" id="profileBtn" value="Create" class="btn btn-success">
+            </div>
+        </form>
+         </div>
+      </div>
+</div>
+<!-- end profile modal -->
+
 <!-- INSERT CENTRAL MODAL -->
 <div class="modal fade" id="addModal" role="dialog">
     <div class="modal-dialog">
