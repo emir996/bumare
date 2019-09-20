@@ -396,8 +396,8 @@
     }
 
     function showText(text_id, text_value){
+        $("#txt_id").val(text_id);
 		$("#tb_value").val(text_value);
-		$("#txt_id").val(text_id);
 		$("#editModal").modal('show');
 	}
 

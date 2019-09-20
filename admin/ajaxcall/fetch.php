@@ -31,7 +31,7 @@
 						    <td> '.$rw['array_value'].' </td>
 						    
 						    <div class="buttons">
-						    	<td><button type="button" onclick="showText(\''.$rw["id"].'\',\''.$rw["array_value"].'\')" class="btn edit"><i class="fa fa-edit"></i></button></td>
+						    	<td><button type="button" onclick="showText('.$rw["id"].',\''.$rw["array_value"].'\')" class="btn edit"><i class="fa fa-edit"></i></button></td>
 						    	<td><a href="?dellang= '.$rw['id'].'" onclick="return check();"><button class="btn del"><i class="fa fa-trash"></i></button></a></td>
 						    </div>
 
