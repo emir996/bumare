@@ -35,10 +35,10 @@
 
 	<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 	<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 	<script>
 		function goBack() {
     window.history.back()
@@ -61,7 +61,7 @@
 		    <div class="col-md-12 col-xs-12 one-row">
 		    	
 		    	<div class="job-header">
-				    <h3 class="jobs-heading"><?php echo $content["application_modal-subtitle"] ?>.</h3>
+				    <h3 class="jobs-heading"><?php echo $content["application_modal-subtitle"]; ?>.</h3>
 				</div>
 			    
 			    <div class="job-body">
@@ -73,7 +73,9 @@
 		    
 		  </div>
 		</div>
-
+		<div class="exit">
+			<a href="index.php"><button type="button" name="back_btn" class="btn-primary"><?php echo $content["btn_back"]; ?></button></a>
+		</div>
 	</div>
 
 	<!-- job application -->
@@ -83,7 +85,7 @@
 	<div class="modal fade" id="applyModal" tabindex="-1" role="dialog" aria-hidden="true">
 	  <div class="modal-dialog" role="document">
 	    <div class="modal-content">
-	      <form method="POST" enctype="multipart/form-data" action="actually.php" id="app_form" style="margin-bottom:0px;">
+	        <form method="POST" enctype="multipart/form-data" action="#" id="app_form" style="margin-bottom:0px;">
 		      <div class="modal-header">
 		        <h4 class="modal-title">JOB APPLICATION</h4>
 		        
@@ -98,9 +100,7 @@
 		      		<h5>Your application for:</h5>
 			      	<p id="profession" class="app-title"></p>
 			      	<p id="interest" class="app-title"></p>
-			    </div> 
-		      	<!--<p id="profession">asdasd</p>
-		        <p id="interest">asdasd</p>-->
+			    </div>
 
 		      	<label>Enter Name:</label>
 		      	<input type="text" name="name" id="app_name" class="form-control" required /> 
@@ -109,16 +109,19 @@
 		      	<input type="email" name="email" id="app_email" class="form-control" required />
 
 		      	<label>CV:</label>
-		      	<input type="file" name="filedoc" id="app_filedoc" required />
+		      	<input type="file" name="filedoc" id="app_filedoc" required /><br><br>
+
+		      	<div class="g-recaptcha form-group form-group-full" data-sitekey="6LcVOq8UAAAAABiG17dxTQvQ2g-qpuK-Si6RJJAI"></div>
 
 		      	<input type="hidden" name="job_id" id="modal_job_id">
 				
 		      </div>
 		      <div class="modal-footer">
 		        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-		        <button type="submit" name="btnInsert" id="btnInsert" class="btn btn-primary">Send</button>
-	      </form>
-	    </div>
+				<button type="submit" id="btnInsert" class="btn btn-primary">Send</button>
+			  </div>
+	        </form>
+	    
 	  </div>
 	</div>
 
@@ -138,16 +141,14 @@
 	<script src="assets/js/util.js"></script>
 	[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]
 	<script src="assets/js/main.js"></script>-->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	
 	<script>
 	$(document).ready(function(){
 		$("#app_form").on('submit', function(e){
 			e.preventDefault();
 			
 			$.ajax({
-				url:'applications.php',
+				url:'admin/ajaxcall/ajax.php',
 				method:'POST',
 				data: new FormData(this),
 				contentType: false,
@@ -174,10 +175,16 @@
 
 					$('.job-body').append(response);
 					
+					}
+				}, complete: function(){
+					if($(".box-body").children().hasClass("empty_message")){
+						var message = $("h4").append("<?php echo $content["message_job"] ?>");
+					} else {
+						return false;
+					}
 				}
-			}
-		});
-	}
+			});
+		}
 
 
 
