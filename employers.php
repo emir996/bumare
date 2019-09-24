@@ -29,14 +29,132 @@
 	<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 	<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	
+	
+	<!-- scripts -->
+
 	<script>
-		function goBack() {
-    window.history.back()
-}
+		$(document).ready(function(){
+			getPublicProfileData();
+		});
+
+		function toggleSlide(descId){
+			$("#panel_desc_"+descId).slideToggle("fast");
+		}
+
+		
+		
+		$(function () {
+			$('#reused_form').submit(function (e) {
+				e.preventDefault();
+
+				$form = $(this);
+
+				$.ajax({
+					type: "POST",
+					url: 'sendEmail.php',
+					data: $form.serialize(),
+					crossDomain: true,
+					success: function (data) {
+
+					},
+					complete: function (data, xhr) {
+						console.log(data);
+						if (data.statusText === 'OK') {
+							$('button[type="submit"]', $form).each(function () {
+								$btn = $(this);
+								$btn.prop('type', 'button');
+								$btn.prop('orig_label', $btn.text());
+								$btn.text('Sent');
+							});
+							$("#success_message").text("");
+							$('#success_message').append("");
+							$('#success_message').show();
+						}
+						else {
+							$("#success_message").text("");
+							$('#success_message').append("<span><?php echo $content['form2_error']; ?></span>");
+							$('#success_message').show();
+						}
+					},
+					dataType: 'application/json'
+				});
+			});
+		});
+		
+		function getPublicProfileData(){
+			$.ajax({
+				url: 'admin/ajaxcall/fetch.php',
+				method: 'POST',
+				dataType: 'text',
+				data: {
+					key:'getPublicProfileData'
+				},
+				success: function(response){
+					if(response != 'reached_max'){
+						$('#profile-info').append(response);
+					}
+				},
+				complete: function()
+				{
+
+					var numProfiles = $("#profile-info .section-one-row").length;
+					var limitPerPage = 3;
+					var totalPages = Math.ceil(numProfiles / limitPerPage);
+					$("#profile-info .section-one-row:gt("+(limitPerPage - 1)+")").hide();
+
+					if(numProfiles > limitPerPage){
+
+						$(".indicators").append("<li class='current-page dot activec'></li>");
+						for(var i = 2; i <= totalPages; i++){
+							$(".indicators").append("<li class='current-page dot'></li>");
+						}
+
+						$(".indicators li.current-page").on("click", function()
+						{
+
+							if($(this).hasClass("activec"))
+							{
+								return false;
+							} 
+							else 
+							{
+								var currentPage = $(this).index() + 1;
+								alert(currentPage);
+								$(".indicators li").removeClass("activec");
+								$(this).addClass("activec");
+								$("#profile-info .section-one-row").hide();
+								
+								var grandTotal = limitPerPage * currentPage;
+
+								for(var i = grandTotal - limitPerPage; i < grandTotal;i++)
+								{
+									$("#profile-info .section-one-row:eq("+i+")").show();
+								}
+							}
+						});
+					}
+
+							if($("#profile-info").children().hasClass("profile_message")){
+								var message = $("h5").append("<?php echo $content["message_profile"] ?>");
+							} 
+							else
+							{
+								return false;
+							}
+				}	
+					
+				});
+			}
+
 	</script>
+	
 </head>
 
-<body class="landing">
+<body>
 
 	<!-- One -->
 	<section id="one" class="wrapper style1 special">
@@ -65,10 +183,26 @@
 					
 				</div>
 			</header>
-
-			</div>
-			
+		</div>	
 	</section>
+
+	<section id="two" class="wrapper style1 special">
+		<div class="header-inner">
+			<h2><?php ?>?</h2>
+		</div>
+		<div class="inner">
+		<div class=""><h4><?php ?>?</h4></div>
+			<div id="profile-info" class="row-inner">
+				
+			</div>
+			<ul class="indicators">
+
+			</ul>
+		
+		</div>
+	</section>
+
+	
 
 	<!-- Four class="inner split" -->
 	<section id="four" class="wrapper style4 special-alt">
@@ -104,9 +238,9 @@
 					<textarea cols=3 rows="4.5" id="textarea_form" name="message" required></textarea>
 				</div>
 
-					<input name="age" type="text" id="age" class="age" style="display: none;" />
+					<input name="age" type="text" id="age" value="employers" class="age" style="display: none;" />
 
-					<div class="g-recaptcha form-group form-group-full" data-sitekey="6Lf43pkUAAAAALoejBeq3FZ5KApN9Cmb3yovD-dC"></div>
+					<div class="g-recaptcha form-group form-group-full" data-sitekey="6LcVOq8UAAAAABiG17dxTQvQ2g-qpuK-Si6RJJAI"></div>
 
 					<ul class="actions" style="padding: 0;display: inline;">
 						
@@ -126,75 +260,6 @@
 	</section>
 
 	<!-- Scripts -->
-	<script src="assets/js/jquery.min.js"></script>
-	<script src="assets/js/jquery.scrolly.min.js"></script>
-	<script src="assets/js/jquery.scrollex.min.js"></script>
-	<script src="assets/js/skel.min.js"></script>
-	<script src="assets/js/util.js"></script>
-	<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-	<script src="assets/js/main.js"></script>
-	<script>
-
-$(function () {
-			var body = $('body');
-			var backgrounds = new Array(
-			'url(images/med.jpg) ',	
-			'url(images/doc1.jpg) ',								
-			'url(images/doctors.jpg) '
-);
-		var current = 0;
-
-		function nextBackground() {
-			body.css(
-				'background-image',
-				backgrounds[current = ++current % backgrounds.length]);
-			setTimeout(nextBackground, 6000);
-	    	}
-		    setTimeout(nextBackground, 6000);
-	    	body.css('background-image', backgrounds[0]);
-});
-
-
-
-		$(function () {
-			$('#reused_form').submit(function (e) {
-				e.preventDefault();
-
-				$form = $(this);
-
-				$.ajax({
-					type: "POST",
-					url: '/sendEmployers.php',
-					data: $form.serialize(),
-					crossDomain: true,
-					success: function (data) {
-
-					},
-					complete: function (data, xhr) {
-						console.log(data);
-						if (data.statusText === 'OK') {
-							$('button[type="submit"]', $form).each(function () {
-								$btn = $(this);
-								$btn.prop('type', 'button');
-								$btn.prop('orig_label', $btn.text());
-								$btn.text('Sent');
-							});
-							$("#success_message").text("");
-							$('#success_message').append("<span><?php echo $content['form2_success']; ?></span>");
-							$('#success_message').show();
-						}
-						else {
-							$("#success_message").text("");
-							$('#success_message').append("<span><?php echo $content['form2_error']; ?></span>");
-							$('#success_message').show();
-						}
-					},
-					dataType: 'application/json'
-				});
-			});
-		});
-		
-	</script>
 </body>
 
 </html>
