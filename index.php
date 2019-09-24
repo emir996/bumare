@@ -101,7 +101,7 @@ function get_ip(){
 		<div class="row-inner">
 		<header class="major">
 			<div class="logo1">
-				<img src="logo1.png">
+				<img src="images/logo1.png">
 			</div>
 			<!-- <span class="icon fas fa-heartbeat style3"></span>  
 			<h1>Agency Name</h1>
@@ -216,11 +216,11 @@ function get_ip(){
 						<textarea cols=3 rows="4.5" id="textarea_form" name="message" required></textarea>
 					</div>
 
-					<input name="age" type="text" id="age" class="age" style="display: none;" />
+					<input name="age" type="text" id="age" class="age" value="maincontact" style="display: none;" />
 
 
 
-					<div class="g-recaptcha form-group form-group-full" data-sitekey="aaaaaaaaaaaaaaaaaaaaaaaaaa"></div>
+					<div class="g-recaptcha form-group form-group-full" data-sitekey="6LcVOq8UAAAAABiG17dxTQvQ2g-qpuK-Si6RJJAI"></div>
 
 					<ul class="actions" style="padding: 0;display: inline;">
 						
@@ -233,7 +233,7 @@ function get_ip(){
 							</div>
 
 						</li>
-					</ul><br><br>
+					</ul>
 					
 	
 				</div>
@@ -396,7 +396,7 @@ $(function () {
 
 				$.ajax({
 					type: "POST",
-					url: '/sendEmail.php',
+					url: 'sendEmail.php',
 					data: $form.serialize(),
 					crossDomain: true,
 					success: function (data) {
