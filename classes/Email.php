@@ -53,23 +53,6 @@ class Email
 				$query = "INSERT INTO users (email, name, message, jobTitle, phone) VALUES ('$email','$name','$message','$job','$phone')";
 				$result = $this->db->insert($query);
 				$response = "Successfully";
-
-				if($result){
-			        $to      = 'arman@bumare.de';
-			        $subject = 'Bumare job application';
-			        $message = "Name: " . $name . "\r\nE-mail: " . $email . "\r\nJob title: " . $job . "\r\nPhone: " . $phone . "\r\nMessage: " . $message;
-			        //$headers = 'From: emina.custovic11@gmail.com' . "\r\n" .
-			            //'Reply-To: emina.custovic11@gmail.com' . "\r\n" .
-			            //'X-Mailer: PHP/' . phpversion();
-			            //ini_set("SMTP","ssl://smtp.gmail.com");
-			            //ini_set("smtp_port","465");
-
-			        $mail_result = mail($to, $subject, $message);
-			        //var_dump( $mail_result );
-			    }else{
-			          $response_array['status'] = 'error';
-			          die();   
-				}
 			} else {
 
 				var_dump(http_response_code(404));
@@ -115,20 +98,7 @@ class Email
 
 					$query = "INSERT INTO employers (name, email, message) VALUES ('$name','$email','$message')";
 					$result = $this->db->insert($query);
-
-					if($result){
-
-				
-
-						$to = "arman@bumare.de";
-						$subject = "Bumare For Employers";
-						$message = "Name: " . $name . "\r\nE-mail: " . $email . "\r\nMessage: " . $message;
-
-						$mail_result = mail($to, $subject, $message);
-					} else {
-
-						$response_error['status'] = 'error';
-						}
+					$response = "Success";
 					} else {
 
 						var_dump(http_response_code(404));
