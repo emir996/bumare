@@ -25,6 +25,7 @@
 					$i++;
 					$output .= '
 						<tr class="text-center" data-language="'.strtolower($rw['language']).'">
+
 						    <td> '.$i.' </td>
 						    <td> '.$rw['array_key'].' </td>
 						    <td> '.$rw['language'].' </td>
@@ -86,12 +87,11 @@
 			    		</div>
 			    		<div class="box-body">
 			    			<div class="enterleave">
-			    				<p id="short_text" class="job1_description">'.$row["description"].'</p>
+			    				<p id="short_text" class="job1_description">'.ucfirst($row["description"]).'</p>
 			    			</div>
 			    		</div>
 			    		<div class="box-footer">
 			    			<input type="submit" onclick="showData(\''.$row["id"].'\',\''.$row["profession"].'\',\''.$row["interest"].'\')" name="btn_apply" id="btn_apply" class="btn btn-primary" value="Apply Now"/>
-			    			<p>'.$row["created_at"].'</p>
 			    		</div>
 			    	</div>';
 			}
