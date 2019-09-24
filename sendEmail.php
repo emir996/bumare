@@ -9,12 +9,22 @@ include 'config/config.php';
 
 $s_email = new Email();
 
-    $send_email = $s_email->send();
+    if($_SERVER["REQUEST_METHOD"] == "POST" && $_POST["age"] == "maincontact"){
 
+        $send_email = $s_email->send();
 
-    if(isset($send_email)){
+        if(isset($send_email)){
+            echo $send_email;
+        }
+    }
 
-        echo $send_email;
+    if($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST["age"] == "employers"){
+
+        $sendEmail = $s_email->sendToEmployer();
+    
+        if(isset($sendEmail)){
+            echo $sendEmail;
+        }
     }
 
 
