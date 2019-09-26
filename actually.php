@@ -38,15 +38,74 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
 	<script>
 		function goBack() {
     window.history.back()
 }
+$(document).ready(function(){
+    $("#app_form").on('submit', function(e){
+        e.preventDefault();
+        
+        $.ajax({
+            url:'admin/ajaxcall/ajax.php',
+            method:'POST',
+            data: new FormData(this),
+            contentType: false,
+            processData: false,
+            success:function(data){
+				swal({
+					title: "Good Job!",
+					text: data,
+					icon: "success"
+				});
+                $("#applyModal").modal('hide');
+            }
+        });
+    });
+
+    getJobData();
+});
+
+function getJobData(){
+    $.ajax({
+        url:'admin/ajaxcall/fetch.php',
+        method: 'POST',
+        dataType: 'text',
+        data: {
+            key: 'getJobData'
+        }, success: function(response){
+            if(response != 'reached_max'){
+
+                $('.job-body').append(response);
+                
+                }
+            }, complete: function(){
+                if($(".box-body").children().hasClass("empty_message")){
+                    var message = $("h4").append("<?php echo $content['message_job'] ?>");
+                } else {
+                    return false;
+                }
+            }
+        });
+    }
+
+
+
+function showData(rowId, profession, interest){
+    $("#profession").text(profession);
+    $("#interest").text(interest);
+    $("#modal_job_id").val(rowId);
+    $("#applyModal").modal('show');
+}
 
 	</script>
 	<style>
-
+		.swal-button {
+			padding-top: 2px;
+		}
 		
 	</style>
 </head>
@@ -141,65 +200,6 @@
 	<script src="assets/js/util.js"></script>
 	[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]
 	<script src="assets/js/main.js"></script>-->
-	
-	<script>
-	$(document).ready(function(){
-		$("#app_form").on('submit', function(e){
-			e.preventDefault();
-			
-			$.ajax({
-				url:'admin/ajaxcall/ajax.php',
-				method:'POST',
-				data: new FormData(this),
-				contentType: false,
-				processData: false,
-				success:function(data){
-					alert(data);
-					$("#applyModal").modal('hide');
-				}
-			});
-		});
-
-		getJobData();
-	});
-
-	function getJobData(){
-		$.ajax({
-			url:'admin/ajaxcall/fetch.php',
-			method: 'POST',
-			dataType: 'text',
-			data: {
-				key: 'getJobData'
-			}, success: function(response){
-				if(response != 'reached_max'){
-
-					$('.job-body').append(response);
-					
-					}
-				}, complete: function(){
-					if($(".box-body").children().hasClass("empty_message")){
-						var message = $("h4").append("<?php echo $content["message_job"] ?>");
-					} else {
-						return false;
-					}
-				}
-			});
-		}
-
-
-
-	function showData(rowId, profession, interest){
-		$("#profession").text(profession);
-		$("#interest").text(interest);
-		$("#modal_job_id").val(rowId);
-		$("#applyModal").modal('show');
-	}
-
-	
-	</script>
-	
-
-
 </body>
 
 </html>
