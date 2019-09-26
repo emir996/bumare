@@ -191,8 +191,18 @@
 									<button type="button" data-role="update" data-id="'.$rw["id"].'" class="p-btn-edit btn-warning"><i class="fa fa-edit"></i></button>
 									<a href="?delprofile='.$rw["id"].'" onclick="return check();"><button type="button" class="p-btn-del btn-danger"><i class="fa fa-trash" style="width:16px";></i></button></a><br>
 										
-									<label>On/Off</label>
-									<input id="public_'.$rw["id"].'" name="public" onclick="return getValue('.$rw["id"].')" '.($is_public == $rw["is_public"]?"checked":"").' type="checkbox" class="chk_value" />
+									<div class="toggleBox">
+
+										<div class="chk_toggle">
+											<input type="checkbox" id="public_'.$rw["id"].'" name="public" onclick="return getValue('.$rw["id"].')" '.($is_public == $rw["is_public"]?"checked":"").' class="chk_value">
+												<label class="onbtn">On</label>
+												<label class="offbtn">Off</label>
+										</div>
+
+									</div>
+
+
+									
 									
 								</div>
 								

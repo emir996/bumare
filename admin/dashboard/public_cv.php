@@ -27,10 +27,12 @@
 					
 			    </div>
 			    <div class="job-body text-center">
-			
+                
 			    	<ul class="list-group" id="list-profile">
-			    		<!-- Data loaded here -->
+                        <!-- Data loaded here -->
+                        
                     </ul>
+                    
 
 			    </div>
             </div>
