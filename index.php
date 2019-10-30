@@ -70,7 +70,7 @@ function get_ip(){
 	<title>Bumare</title>
 
 	<!--<link rel="shortcut icon" type="image/png" href="apple-icon-120x120.png"/> -->
-	<link rel="shortcut icon" type="image/png" href="logo-icon.png"/>
+	<link rel="shortcut icon" type="image/png" href="images/logo-icon.png"/>
 
 	<link rel="image_src" href="/images/med.jpg" / >
 	<meta property='og:image' content='http://bumare.de/images/med.jpg'/>
@@ -220,7 +220,7 @@ function get_ip(){
 
 
 
-					<div class="g-recaptcha form-group form-group-full" data-sitekey="6LcVOq8UAAAAABiG17dxTQvQ2g-qpuK-Si6RJJAI"></div>
+					<div class="g-recaptcha form-group form-group-full" data-sitekey=""></div>
 
 					<ul class="actions" style="padding: 0;display: inline;">
 						
