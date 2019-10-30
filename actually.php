@@ -20,7 +20,7 @@
 	<title>Bumare</title>
 
 	<!--<link rel="shortcut icon" type="image/png" href="apple-icon-120x120.png"/> -->
-	<link rel="shortcut icon" type="image/png" href="logo-icon.png"/>
+	<link rel="shortcut icon" type="image/png" href="images/logo-icon.png"/>
 
 
 	<meta name="msapplication-TileColor" content="#ffffff">
@@ -84,7 +84,7 @@ function getJobData(){
                 }
             }, complete: function(){
                 if($(".box-body").children().hasClass("empty_message")){
-                    var message = $("h4").append("<?php echo $content['message_job'] ?>");
+                    var message = $("h4").append("<?php echo $content["empty_job_message"]; ?>");
                 } else {
                     return false;
                 }
@@ -170,7 +170,7 @@ function showData(rowId, profession, interest){
 		      	<label>CV:</label>
 		      	<input type="file" name="filedoc" id="app_filedoc" required /><br><br>
 
-		      	<div class="g-recaptcha form-group form-group-full" data-sitekey="6LcVOq8UAAAAABiG17dxTQvQ2g-qpuK-Si6RJJAI"></div>
+		      	<div class="g-recaptcha form-group form-group-full" data-sitekey=""></div>
 
 		      	<input type="hidden" name="job_id" id="modal_job_id">
 				
