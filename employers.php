@@ -15,7 +15,7 @@
 	<title>Bumare</title>
 
 	<!--<link rel="shortcut icon" type="image/png" href="apple-icon-120x120.png"/> -->
-	<link rel="shortcut icon" type="image/png" href="logo-icon.png"/>
+	<link rel="shortcut icon" type="image/png" href="images/logo-icon.png"/>
 
 
 	<meta name="msapplication-TileColor" content="#ffffff">
@@ -71,7 +71,7 @@
 								$btn.text('Sent');
 							});
 							$("#success_message").text("");
-							$('#success_message').append("");
+							$('#success_message').append("<span><?php echo $content['form2_success']; ?></span>");
 							$('#success_message').show();
 						}
 						else {
@@ -123,7 +123,6 @@
 							else 
 							{
 								var currentPage = $(this).index() + 1;
-								alert(currentPage);
 								$(".indicators li").removeClass("activec");
 								$(this).addClass("activec");
 								$("#profile-info .section-one-row").hide();
@@ -139,7 +138,7 @@
 					}
 
 							if($("#profile-info").children().hasClass("profile_message")){
-								var message = $("h5").append("<?php echo $content["message_profile"] ?>");
+								var message = $("h5").append("<?php echo $content["empty_profile_message"] ?>");
 							} 
 							else
 							{
@@ -188,10 +187,10 @@
 
 	<section id="two" class="wrapper style1 special">
 		<div class="header-inner">
-			<h2><?php ?>?</h2>
+			<h2>What we Offer</h2>
 		</div>
 		<div class="inner">
-		<div class=""><h4><?php ?>?</h4></div>
+		<div class=""><h4><?php ?></h4></div>
 			<div id="profile-info" class="row-inner">
 				
 			</div>
@@ -240,7 +239,7 @@
 
 					<input name="age" type="text" id="age" value="employers" class="age" style="display: none;" />
 
-					<div class="g-recaptcha form-group form-group-full" data-sitekey="6LcVOq8UAAAAABiG17dxTQvQ2g-qpuK-Si6RJJAI"></div>
+					<div class="g-recaptcha form-group form-group-full" data-sitekey=""></div>
 
 					<ul class="actions" style="padding: 0;display: inline;">
 						
