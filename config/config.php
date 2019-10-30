@@ -1,10 +1,10 @@
 <?php
 	
 	define("DBHOST", "localhost");
-	define("DBUSER", "root");
+	define("DBUSER", "root"); 
 	define("DBPASS", "");
 	define("DBNAME", "bumare_db");
-	define("APP_DIR", "d:/xampp/htdocs/bumare");
+	define("APP_DIR", "c:/xampp/htdocs/bumare");
 
 	spl_autoload_register(function($class){
 
