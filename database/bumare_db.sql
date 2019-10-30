@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 4.9.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Generation Time: Jul 22, 2019 at 10:03 AM
--- Server version: 10.2.25-MariaDB
--- PHP Version: 7.2.7
+-- Host: 127.0.0.1
+-- Generation Time: Oct 28, 2019 at 03:25 PM
+-- Server version: 10.4.8-MariaDB
+-- PHP Version: 7.3.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -77,7 +77,7 @@ CREATE TABLE `categories_lang` (
 
 INSERT INTO `categories_lang` (`id`, `language`) VALUES
 (1, 'English'),
-(2, 'Deutchland'),
+(2, 'German'),
 (3, 'Bosnian');
 
 -- --------------------------------------------------------
@@ -190,30 +190,30 @@ INSERT INTO `languages_id` (`id`, `array_key`, `array_value`, `lang_id`) VALUES
 (62, 'en_translation', 'Englisch', 2),
 (63, 'de_translation', 'Deutsch', 2),
 (64, 'ba_translation', 'Bosnisch', 2),
-(65, 'heading1', 'MÃ¶chten Sie in Deutschland arbeiten ?', 2),
-(66, 'heading2', 'Wir kÃ¶nnen es fÃ¼r sie ohne jede Kosten realisieren!', 2),
+(65, 'heading1', 'Möchten Sie in Deutschland arbeiten ?', 2),
+(66, 'heading2', 'Wir können es für sie ohne jede Kosten realisieren!', 2),
 (67, 'four', 'Kontaktieren sie uns', 2),
-(68, 'info', 'Ãœber uns', 2),
-(69, 'employers', 'FÃ¼r Arbeitgeber', 2),
+(68, 'info', 'Über uns', 2),
+(69, 'employers', 'Für Arbeitgeber', 2),
 (70, 'welcome', 'Willkommen', 2),
 (71, 'subtitle', 'Professioneller und sicherer Weg, Krankenschwester oder Arzt in Deutschland zu werden.', 2),
-(72, 'b2_title1', 'FÃ¼llen Sie zuerst das unten angegebene Kontaktformular aus', 2),
-(73, 'b2_title2', 'Unsere Dienstleistungen sind vÃ¶llig kostenlos', 2),
+(72, 'b2_title1', 'Füllen Sie zuerst das unten angegebene Kontaktformular aus', 2),
+(73, 'b2_title2', 'Unsere Dienstleistungen sind völlig kostenlos', 2),
 (74, 'b2_title3', 'Ihr Traumjob ist jetzt erreichbar', 2),
 (75, 'b2_body1', 'Kontaktieren Sie uns! Senden Sie Ihren Lebenslauf sowie das Bewerbungsschreiben zu', 2),
-(76, 'b2_body2', 'Es fallen keine zusÃƒÂ¤tzlichen GebÃƒÂ¼hren an! Wir bieten UnterstÃƒÂ¼tzung bei der Weiterbildung, sowie Suche der Unterkunft in Deutschland an', 2),
-(77, 'b2_body3', 'Bumare bietet neue MÃƒÂ¶glichkeiten. Nutzen Sie Ihre Chance! Mit uns haben Sie einen Freund - Bumare Team!', 2),
-(78, 'more_info', 'Arbeiten Sie mit Fachleuten und hochwertigen medizinischen GerÃƒÂ¤ten(mehr darÃƒÂ¼ber)', 2),
+(76, 'b2_body2', 'Es fallen keine zusätzlichen gebühren an! Wir bieten Unterstützung bei der weiterbildung sowie bei der wohnungssuche in Deutschland', 2),
+(77, 'b2_body3', 'Bumare bietet neue möglichkeiten. Nutze deine chance! Mit uns haben sie einen freund - Bumare Team!', 2),
+(78, 'more_info', 'Arbeiten sie mit fachleuten und hochwertigen medizinischen geräten (mehr über)', 2),
 (79, 'form-header', 'Kontaktieren sie uns', 2),
-(80, 'formp', 'FÃ¼llen Sie dieses Formular aus, wenn Sie interessiert sind, wir freuen uns auf ihre Anmeldung', 2),
+(80, 'formp', 'Füllen Sie dieses Formular aus, wenn Sie interessiert sind, wir freuen uns auf ihre Anmeldung', 2),
 (81, 'name', 'Name', 2),
 (82, 'email', 'E-mail', 2),
 (83, 'jobTitle', 'Berufsbezeichnung', 2),
 (84, 'phone', 'Telefonnummer', 2),
 (85, 'message', 'Nachricht', 2),
 (86, 'submit', 'Senden', 2),
-(87, 'info-title', 'WÃ¤hlen sie uns aus', 2),
-(88, 'info-subtitle', 'Warum sollten Sie uns wÃ¤hlen?', 2),
+(87, 'info-title', 'Wählen sie uns aus', 2),
+(88, 'info-subtitle', 'Warum sollten Sie uns wählen?', 2),
 (89, 'b4_title1', 'Bewerbungsunterlagen', 2),
 (90, 'b4_title2', 'Schneller Service ', 2),
 (91, 'b4_title3', 'Beste Stellenangebote', 2),
@@ -221,72 +221,72 @@ INSERT INTO `languages_id` (`id`, `array_key`, `array_value`, `lang_id`) VALUES
 (93, 'b4_title5', 'Transport', 2),
 (94, 'b4_title6', 'Personal Coaching', 2),
 (95, 'b4_body1', 'Verbesserung und Aktualisierung des Lebenslaufs ', 2),
-(96, 'b4_body2', 'Die neuesten Stellenangebote fÃƒÂ¼r Sie', 2),
-(97, 'b4_body3', 'Wir haben die Stellenangebote fÃƒÂ¼r Ihre Anforderungen optimiert', 2),
+(96, 'b4_body2', 'Die neuesten Stellenangebote für Sie', 2),
+(97, 'b4_body3', 'Wir haben die Stellenangebote für Ihre Anforderungen optimiert', 2),
 (98, 'b4_body4', 'Die besten Arbeitgeber im Gesundheitswesen', 2),
-(99, 'b4_body5', 'UnterstÃƒÂ¼tzung bei Transport und Unterkunft', 2),
-(100, 'b4_body6', 'Vorbereitung fÃƒÂ¼r das BewerbungsgesprÃƒÂ¤ch', 2),
-(101, 'more_info_heading1', 'Die neueste medizinische AUSRÃƒÅ“STUNG', 2),
+(99, 'b4_body5', 'Unterstützung für Transport und Unterkunft', 2),
+(100, 'b4_body6', 'Vorbereitung auf das Interview', 2),
+(101, 'more_info_heading1', 'Die neueste medizinische AUSSTELLUNG', 2),
 (102, 'more_info_heading2', 'Arbeite mit profis', 2),
-(103, 'employers_body2', 'NaÅ¡a stranica i oglaÅ¡avanje na istoj je u potpunosti besplatno. Spojite se sa radnicima i moÅ¾da veÄ‡ sutra meÄ‘u njima pronaÄ‘ete kadar koji je Vama potreban.', 3),
-(104, 'employers_body3', 'LijeÄnici i medicinske sestre Äekaju na VaÅ¡u zdravstvenu ustanovu. Javite nam se, i mi Ä‡emo Vam pomoÄ‡i u pronalasku radnika. Na Vama je samo da ispunite dole navedeni obrazac.', 3),
-(105, 'more_info_content2', 'Das Department of Veterans Affairs rekrutiert fÃƒÂ¼r eine Position, 2. Krankenschwester/Krankenpfleger, die in diesem Gesundheitszentrum in Rocky Hill, CT. Diese Position wird durchschnittlich 24 Stunden pro Woche betragen. Alle Bewerber mÃƒÂ¼ssen einen Le', 2),
-(106, 'employers_heading', 'FÃ¼r Arbeitgeber', 2),
+(103, 'employers_body2', 'Naša stranica i oglašavanje na istoj je u potpunosti besplatno. Spojite se sa radnicima i možda ve? sutra me?u njima prona?ete kadar koji je Vama potreban.', 3),
+(104, 'employers_body3', 'Lije?nici i medicinske sestre ?ekaju na Vašu zdravstvenu ustanovu. Javite nam se, i mi Ä‡emo Vam pomoÄ‡i u pronalasku radnika. Na Vama je samo da ispunite dole navedeni obrazac.', 3),
+(105, 'more_info_content2', 'Das department of veterans affairs hat eine zweite stelle als krankenschwester / -pfleger angestellt, die in diesem gesundheitszentrum in Rocky Hill, CT, arbeitet. diese Position wird durchschnittlich 24 stunden pro woche. Alle bewerber müssen einen LE hab', 2),
+(106, 'employers_heading', 'Für Arbeitgeber', 2),
 (107, 'employers_subtitle', 'Jetzt Anmelden!', 2),
-(108, 'employers_title1', 'Sie benÃƒÂ¶tigen zusÃƒÂ¤tzliches Fachpersonal?', 2),
+(108, 'employers_title1', 'Sie benötigen zusätzliches fachpersonal?', 2),
 (109, 'employers_title2', 'Kostenlose Mitgliedschaft', 2),
 (110, 'employers_title3', 'Bumare verbindet miteinander', 2),
-(111, 'employers_body1', 'Bumare hilft Ihnen dabei und verbindet Sie mit den besten FachkrÃƒÂ¤ften', 2),
-(112, 'employers_body2', 'Ihre Anmeldung ist vÃƒÂ¶llig kostenlos. Kontaktieren Sie uns! Wir kÃƒÂ¼mmern uns um die gewÃƒÂ¼nschte VerstÃƒÂ¤rkung fÃƒÂ¼r Ihr Team', 2),
+(111, 'employers_body1', 'Bumare hilft Ihnen dabei und verbindet sie mit den besten fachkräften', 2),
+(112, 'employers_body2', 'Ihre registrierung ist völlig kostenlos. Kontaktiere uns! Wir kümmern uns um die gewünschte verstärkung für Ihr team', 2),
 (113, 'employers_body3', 'Einfach und schnell zum erfahrenen und qualifizierten Personal', 2),
 (114, 'employers_more_info', '-', 2),
 (115, 'employers_form-header', 'Kontaktieren sie uns', 2),
-(116, 'employers_formp', 'FÃƒÂ¼llen Sie das Formular aus. Wir freuen uns auf Ihre Anmeldung', 2),
+(116, 'employers_formp', 'Füllen Sie das Formular aus. Wir freuen uns auf Ihre Anmeldung', 2),
 (117, 'employers_name', 'Name', 2),
 (118, 'employers_email', 'E-mail', 2),
 (119, 'employers_message', 'Nachricht', 2),
 (120, 'employers_submit', 'Senden', 2),
 (121, 'job-doctor', 'Arzt', 2),
 (122, 'job-nurse', 'Krankenschwester', 2),
-(123, 'employers_body1', 'Ukoliko imate posao ali Vam nedostaje radnika, te nemate moguÄ‡nosti doÄ‡i do istih. Bumare Ä‡e Vam pomoÄ‡i i spojiti Vas sa najboljim radnicima iz Bosne i Hercegovine, Hrvatske i Srbije.', 3),
-(124, 'employers_title3', 'Rad u NjemaÄkoj', 3),
-(125, 'employers_title2', 'Besplatno se uÄlanite', 3),
+(123, 'employers_body1', 'Ukoliko imate posao ali Vam nedostaje radnika, te nemate mogućnosti doći do istih. Bumare će Vam pomoći i spojiti Vas sa najboljim radnicima iz Bosne i Hercegovine, Hrvatske i Srbije.', 3),
+(124, 'employers_title3', 'Rad u Njemačkoj', 3),
+(125, 'employers_title2', 'Besplatno se učlanite', 3),
 (126, 'employers_heading', 'Za poslodavce', 3),
 (127, 'employers_subtitle', 'Prijavite se!', 3),
 (128, 'employers_title1', 'Poslodavac ste, trebate radnike?', 3),
 (129, 'b4_body2', 'Budite informisani o najnovijim i najinteresantnijim prilikama', 3),
-(130, 'b4_body3', 'Optimizirali smo ponude za posao kako bi ispunili VaÅ¡e zahtjeve', 3),
-(131, 'b4_body1', 'AÅ¾uriramo VaÅ¡ CV zajedno sa svim potrebnim dokumentima za prijavu', 3),
+(130, 'b4_body3', 'Optimizirali smo ponude za posao kako bi ispunili Vaše zahtjeve', 3),
+(131, 'b4_body1', 'Ažuriramo Vaš CV zajedno sa svim potrebnim dokumentima za prijavu', 3),
 (132, 'b4_title6', 'Priprema intervjua', 3),
 (133, 'b4_title5', 'Transport', 3),
 (134, 'b4_title4', 'Atraktivni partneri', 3),
 (135, 'b4_title3', 'Najbolja ponuda za posao', 3),
 (136, 'b4_title2', 'Brza usluga', 3),
 (137, 'b4_title1', 'CV pregled', 3),
-(138, 'info-subtitle', 'ZaÅ¡to smo mi pravi partner za vas', 3),
+(138, 'info-subtitle', 'Zašto smo mi pravi partner za vas', 3),
 (139, 'info-title', 'Izaberite nas', 3),
-(140, 'submit', 'PoÅ¡alji/Potvrdi', 3),
+(140, 'submit', 'Pošalji/Potvrdi', 3),
 (141, 'placeholder_form', 'Opciono polje...', 3),
 (142, 'phoneNumber', 'Broj Telefona', 3),
 (143, 'message', 'Poruka', 3),
 (144, 'email', 'E-mail', 3),
 (145, 'jobTitle', 'Zanimanje', 3),
 (146, 'name', 'Ime i Prezime', 3),
-(147, 'formp', 'Popunite obrazac! Radujemo se VaÅ¡em javljanju i saradnji.', 3),
+(147, 'formp', 'Popunite obrazac! Radujemo se Vašem javljanju i saradnji.', 3),
 (148, 'form-header', 'Kontaktirajte nas', 3),
-(149, 'b2_body3', 'NjemaÄka viÅ¡e nije nedostÅ¾na: Bumare Vam otvara put ka boljoj buduÄ‡nosti. Iskoristite priliku, odluka je na Vama! U nama imate prijatelja - Bumare Team', 3),
-(150, 'b2_body2', 'Usluga je besplatna: NaÅ¡a usluga je bez dodatnih troÅ¡kova. Nudimo moguÄ‡nost pronalaska radnog mjesta, doÅ¡kolovavanja (kurs njemaÄkog jezika), te olakÅ¡avamo proces pronalaska smjeÅ¡taja u NjemaÄkoj', 3),
-(151, 'b2_body1', 'Å½elite Å½ivjeti i raditi u NjemaÄkoj? Kontaktirajte nas i ispunite obrazac u nastavku. PoÅ¡aljite nam svoj CV i motivacijsko pismo.', 3),
+(149, 'b2_body3', 'Njemačka više nije nedostižna: Bumare Vam otvara put ka boljoj budućnosti. Iskoristite priliku, odluka je na Vama! U nama imate prijatelja - Bumare Team', 3),
+(150, 'b2_body2', 'Usluga je besplatna: Naša usluga je bez dodatnih troškova. Nudimo mogućnost pronalaska radnog mjesta, doškolovavanja (kurs njemačkog jezika), te olakšavamo proces pronalaska smještaja u Njemačkoj', 3),
+(151, 'b2_body1', 'Želite Živjeti i raditi u Njemačkoj? Kontaktirajte nas i ispunite obrazac u nastavku. Pošaljite nam svoj CV i motivacijsko pismo.', 3),
 (152, 'b2_title1', 'Kontaktiraj nas!', 3),
 (153, 'b2_title2', 'Usluga je besplatna!', 3),
-(154, 'b2_title3', 'Posao iz snova nije nedostiÅ¾an!', 3),
-(155, 'subtitle', 'Profesionalan i siguran naÄin da postanete doktor ili dio medicinskog osoblja u NjemaÄkoj', 3),
+(154, 'b2_title3', 'Posao iz snova nije nedostižan!', 3),
+(155, 'subtitle', 'Profesionalan i siguran način da postanete doktor ili dio medicinskog osoblja u Njemačkoj', 3),
 (156, 'employers', 'Za poslodavce', 3),
-(157, 'welcome', 'Dobro doÅ¡li', 3),
-(158, 'info', 'Saznajte viÅ¡e', 3),
+(157, 'welcome', 'Dobro došli', 3),
+(158, 'info', 'Saznajte više', 3),
 (159, 'four', 'Kontaktiraj nas', 3),
-(160, 'heading2', 'Mi to moÅ¾emo uÄiniti za Vas bez ikakvih troÅ¡kova!', 3),
-(161, 'heading1', 'Da li bi voljeli Å½ivjeti i raditi u NjemaÄkoj ?', 3),
+(160, 'heading2', 'Mi to možemo uÄčiniti za Vas bez ikakvih troškova!', 3),
+(161, 'heading1', 'Da li bi voljeli živjeti i raditi u Njemačkoj ?', 3),
 (162, 'ba_translation', 'Bosanski', 3),
 (163, 'phoneNumber', 'Telefonnummer', 2),
 (164, 'de_translation', 'NjemaÄki', 3),
@@ -298,27 +298,27 @@ INSERT INTO `languages_id` (`id`, `array_key`, `array_value`, `lang_id`) VALUES
 (171, 'employers_name', 'Ime', 3),
 (172, 'employers_email', 'E-mail', 3),
 (173, 'employers_message', 'Poruka', 3),
-(174, 'employers_submit', 'PoÅ¡alji/Potvrdi', 3),
+(174, 'employers_submit', 'Pošalji/Potvrdi', 3),
 (180, 'job-doctor', 'Doktor', 3),
 (183, 'job-nurse', 'Med. Sestra', 3),
 (184, 'en_translation', 'Engleski', 3),
-(199, 'b4_body4', 'PoveÅ¾ite se sa najboljim poslodavcima u zdravstvu', 3),
-(200, 'b4_body5', 'Sa nama dobijate podrÅ¡ku za prevoz i smjeÅ¡taj', 3),
-(203, 'b4_body6', 'Biti Ä‡ete pripremljeni za intevju uz pomoÄ‡ personaliziranog treninga', 3),
+(199, 'b4_body4', 'Povežite se sa najboljim poslodavcima u zdravstvu', 3),
+(200, 'b4_body5', 'Sa nama dobijate podršku za prevoz i smještaj', 3),
+(203, 'b4_body6', 'Biti ćete pripremljeni za intevju uz pomoć personaliziranog treninga', 3),
 (273, 'form_success', 'Your email has been sent. We will get back to you as soon as possible!', 1),
-(274, 'form_success', 'Ihre E-Mail wurde gesendet. Wir werden uns so schnell wie mÃ¶glich bei Ihnen melden!', 2),
-(275, 'form_success', 'VaÅ¡ e-mail je poslat. KontaktiraÄ‡emo vas u najkraÄ‡em moguÄ‡em roku!', 3),
-(276, 'form_error', 'VaÅ¡ e-mail nije uspeÅ¡no poslat, verovatno niste samo Å¡tiklirali pregled koji se nalazi ispod forme, molimo pokuÅ¡ajte ponovo.', 3),
-(277, 'form_error', 'Entschuldigung, beim Senden Ihrer E-Mail ist ein Fehler aufgetreten. MÃ¶glicherweise haben Sie die Umfrage unten nicht abgeschlossen. Versuchen Sie es erneut.', 2),
+(274, 'form_success', 'Ihre E-Mail wurde gesendet. Wir werden uns so schnell wie möglich bei ihnen melden!', 2),
+(275, 'form_success', 'Vaš e-mail je poslat. Kontaktiraćemo vas u najkraćem mogućem roku!', 3),
+(276, 'form_error', 'Vaš e-mail nije uspešno poslat, verovatno niste samo Štiklirali pregled koji se nalazi ispod forme, molimo pokušajte ponovo.', 3),
+(277, 'form_error', 'Entschuldigung, beim senden Ihrer E-Mail ist ein fehler aufgetreten. Möglicherweise haben sie die umfrage unten nicht abgeschlossen. Versuchen sie es erneut.', 2),
 (278, 'form_error', 'Sorry there was an error sending your email, maybe you just not completed survey below, try again.', 1),
 (279, 'form2_success', 'Posted your message successfully!', 1),
 (280, 'form2_success', 'Ihre Nachricht wurde erfolgreich gesendet.', 2),
-(281, 'form2_success', 'Poruka je uspeÅ¡no poslata!', 3),
-(282, 'form2_error', 'Poruka nije uspeÅ¡no poslata, moÅ¾da niste samo Å¡tiklirali pregled ispod forme. Molimo pokuÅ¡ajte ponovo!', 3),
+(281, 'form2_success', 'Poruka je uspešno poslata!', 3),
+(282, 'form2_error', 'Poruka nije uspešno poslata, možda niste samo štiklirali pregled ispod forme. Molimo pokušajte ponovo!', 3),
 (283, 'form2_error', 'Sorry, you didn\'t post message successfully, maybe you just not completed this survey below. Try again!', 1),
 (284, 'form2_error', 'Entschuldigung, Sie haben die Nachricht nicht erfolgreich verfasst. Vielleicht haben Sie diese Umfrage unten nicht abgeschlossen. Versuchen Sie es nochmal!', 2),
 (296, 'job-engineer', 'Engineer', 1),
-(297, 'job-engineer', 'InÅ¾enjer', 3),
+(297, 'job-engineer', 'Inženjer', 3),
 (298, 'job-engineer', 'Ingenieur', 2),
 (299, 'job-architect', 'Arhitekta', 3),
 (300, 'job-architect', 'Architect', 1),
@@ -330,8 +330,34 @@ INSERT INTO `languages_id` (`id`, `array_key`, `array_value`, `lang_id`) VALUES
 (355, 'application_modal-header', 'Otvorene Pozicije', 3),
 (356, 'application_modal-header', 'Offene Positionen', 2),
 (357, 'application_modal-subtitle', 'Join the Bumare team, apply now', 1),
-(358, 'application_modal-subtitle', 'PridruÅ¾ite se bumare timu, apliciraj sada', 3),
-(359, 'application_modal-subtitle', 'Treten Sie dem Bumare-Team bei und bewerben Sie sich jetzt', 2);
+(358, 'application_modal-subtitle', 'Pridružite se bumare timu, apliciraj sada', 3),
+(359, 'application_modal-subtitle', 'Treten Sie dem Bumare-Team bei und bewerben Sie sich jetzt', 2),
+(365, 'btn_back', 'Back', 1),
+(367, 'btn_back', 'Zurück', 2),
+(368, 'btn_back', 'Nazad', 3),
+(369, 'empty_profile_message', 'Sorry, but we do not have any profile to offer for employers at this moment. Try later!', 1),
+(370, 'empty_profile_message', 'Leider haben wir derzeit kein profil, um arbeitgebern anzubieten. Versuche es später!', 2),
+(371, 'empty_profile_message', 'Izvinjavamo se, trenutno nemamo ponuda za poslodavce. Pokušajte kasnije!', 3),
+(372, 'empty_job_message', 'Sorry, but we do not have any job offer for you at this moment, try later!', 1),
+(373, 'empty_job_message', 'Entschuldigung, aber wir haben derzeit kein stellenangebot für sie. Versuchen sie es später noch einmal!', 2),
+(374, 'empty_job_message', 'Žao nam je, trenutno nemamo poslovnih ponuda za vas, pokušajte kasnije.', 3);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `profiles`
+--
+
+CREATE TABLE `profiles` (
+  `id` int(11) NOT NULL,
+  `name` varchar(256) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `description` varchar(1024) NOT NULL,
+  `cv_file_name` varchar(255) NOT NULL,
+  `profession` varchar(255) NOT NULL,
+  `interest` varchar(255) NOT NULL,
+  `is_public` tinyint(4) DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -401,6 +427,12 @@ ALTER TABLE `languages_id`
   ADD KEY `lang_id` (`lang_id`);
 
 --
+-- Indexes for table `profiles`
+--
+ALTER TABLE `profiles`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -438,13 +470,19 @@ ALTER TABLE `employers`
 -- AUTO_INCREMENT for table `jobs`
 --
 ALTER TABLE `jobs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `languages_id`
 --
 ALTER TABLE `languages_id`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=365;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=375;
+
+--
+-- AUTO_INCREMENT for table `profiles`
+--
+ALTER TABLE `profiles`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `users`
