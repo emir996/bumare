@@ -97,7 +97,7 @@
 <!-- end profile modal -->
 
 <!-- INSERT CENTRAL MODAL -->
-<div class="modal fade" id="addModal" role="dialog">
+<!--<div class="modal fade" id="addModal" role="dialog">
     <div class="modal-dialog">
       <div class="modal-content">
 
@@ -125,12 +125,13 @@
             <select id="sel_lang" name="sel_lang" class="form-control" required>
               <option value="">Choose your language</option>
           <?php 
-          	$getLang = $text->getAllCatLang();
+            //Getting Languages from db
+          	/*$getLang = $text->getAllCatLang();
             if($getLang){
               while($rw=$getLang->fetch_object()){
                 echo "<option value='{$rw->id}'>$rw->language</option>";
               }
-            }
+            }*/
           ?>
 
             </select>
@@ -147,7 +148,7 @@
 
       </div>
     </div>
-  </div>
+  </div> -->
 
 
 <!-- Job MODAL -->

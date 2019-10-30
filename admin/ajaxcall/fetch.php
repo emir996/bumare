@@ -97,7 +97,7 @@
 			}
 			exit($response);
 		} else {
-			$response = '<div class="box-body">
+			$response .= '<div class="box-body">
 			    			<h4 class="empty_message"></h4>
 			    		</div>';
 			exit($response);

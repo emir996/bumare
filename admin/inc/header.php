@@ -149,7 +149,6 @@
 		} else {
 			$('tbody tr').show();
 		}
-		
 	}
 
     function check(){

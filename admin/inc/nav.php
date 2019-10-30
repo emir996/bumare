@@ -21,7 +21,7 @@
     </ul>
       
 
-      <button type="submit" class="btn add" data-toggle="modal" data-target="#addModal">Create New</button>
+      <!--<button type="submit" class="btn add" data-toggle="modal" data-target="#addModal">Create New</button> button for inserting new sentence -->
       <a href="?action=logout" style="text-decoration:none;"><button class="btn-logout my-2 my-sm-0" type="submit">Logout</button></a>
     
   </div>
