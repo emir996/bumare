@@ -63,7 +63,7 @@ class Language {
 	public function langInsert(){
 
 		$key = mysqli_real_escape_string($this->db->conn, $_POST['txt_key']);
-		$text_value = mysqli_real_escape_string($this->db->conn, utf8_encode($_POST['txt_value']));
+		$text_value = mysqli_real_escape_string($this->db->conn, $_POST['txt_value']);
 		$selected_lang = mysqli_real_escape_string($this->db->conn, $_POST['sel_lang']);
 
 		$key = $this->fm->validation($key);
@@ -93,7 +93,7 @@ class Language {
 	public function langUpdate(){
 
 		$id = mysqli_real_escape_string($this->db->conn, $_POST['txt_id']);
-		$textarea = mysqli_real_escape_string($this->db->conn, utf8_encode($_POST['tb_value']));
+		$textarea = mysqli_real_escape_string($this->db->conn, $_POST['tb_value']);
 		$textarea = $this->fm->validation($textarea);
 		
 

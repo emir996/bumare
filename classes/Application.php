@@ -71,7 +71,7 @@ class Application
 			exit($msg);
 		} else {
 
-			$secretKey = "6LcVOq8UAAAAANPjkvMl3HeTciC4z0qyxM-4zUNo";
+			$secretKey = "6LfB3b8UAAAAAC1_CymM5qCw3Bb7IoxhtWJ6E2ec";
 			$responseKey = $_POST['g-recaptcha-response'];
 			$userIP = $_SERVER['REMOTE_ADDR'];
 			$url = "https://www.google.com/recaptcha/api/siteverify?secret=$secretKey&response=$responseKey&remoteip=$userIP";
@@ -88,6 +88,14 @@ class Application
 				if($inserted_row){
 					$msg = "Your application successfully sent";
 					exit($msg);
+
+						$to = "arman@bumare.de";
+						$subject = "Bumare Aplication";
+						$msg = "You have new notification for job apply, check on your site http://bumare.de/admin/";
+						$headers = "MIME-Version: 1.0" . "\r\n";
+						$headers. = "Content-type:text/html;charset=UTF-8" . "\r\n";
+
+						mail($to, $subject, $msg, $headers);
 				} else {
 					$msg = "Something went wrong, try again";
 					exit($msg);

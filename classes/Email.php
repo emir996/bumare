@@ -41,7 +41,7 @@ class Email
 			die();
 		} else {
 
-			$secretKey = "6LcVOq8UAAAAANPjkvMl3HeTciC4z0qyxM-4zUNo";
+			$secretKey = "6LfB3b8UAAAAAC1_CymM5qCw3Bb7IoxhtWJ6E2ec";
 		    $responseKey = $_POST['g-recaptcha-response'];
 		    $userIP = $_SERVER['REMOTE_ADDR'];
 		    $url = "https://www.google.com/recaptcha/api/siteverify?secret=$secretKey&response=$responseKey&remoteip=$userIP";
@@ -53,6 +53,16 @@ class Email
 				$query = "INSERT INTO users (email, name, message, jobTitle, phone) VALUES ('$email','$name','$message','$job','$phone')";
 				$result = $this->db->insert($query);
 				$response = "Successfully";
+
+					if($result){
+						$to = "arman@bumare.de";
+						$subject = "Bumare";
+						$msg = $message;
+						$headers = "MIME-Version: 1.0" . "\r\n";
+						$headers. = "Content-type:text/html;charset=UTF-8" . "\r\n";
+
+						mail($to, $subject, $msg, $headers);
+					}
 			} else {
 
 				var_dump(http_response_code(404));
@@ -87,7 +97,7 @@ class Email
 			var_dump(http_response_code(404));
 		} else {
 
-				$secretKey = "6LcVOq8UAAAAANPjkvMl3HeTciC4z0qyxM-4zUNo";
+				$secretKey = "6LfB3b8UAAAAAC1_CymM5qCw3Bb7IoxhtWJ6E2ec";
 			    $responseKey = $_POST['g-recaptcha-response'];
 			    $userIP = $_SERVER['REMOTE_ADDR'];
 			    $url = "https://www.google.com/recaptcha/api/siteverify?secret=$secretKey&response=$responseKey&remoteip=$userIP";
@@ -99,6 +109,19 @@ class Email
 					$query = "INSERT INTO employers (name, email, message) VALUES ('$name','$email','$message')";
 					$result = $this->db->insert($query);
 					$response = "Success";
+
+						if($result){
+							
+							$to = "arman@bumare.de";
+							$subject = "Bumare Employers";
+							$msg = $message;
+							$headers = "MIME-Version: 1.0" . "\r\n";
+							$headers. = "Content-type:text/html;charset=UTF-8" . "\r\n";
+
+							mail($to, $subject, $msg, $headers);
+
+						}
+
 					} else {
 
 						var_dump(http_response_code(404));
